@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 15.0, macOS 12.0, watchOS 8.0, tvOS 15.0, *)
+@available(iOS 15.0, macOS 12.0, watchOS 8.0, tvOS 15.0, *) // Video about @available here: https://youtu.be/u1SMCxmYMvE
 @usableFromInline internal struct TaskOnFirstAppearModifier<T: Equatable>: ViewModifier {
     
     @State private var onAppearCalled = false
