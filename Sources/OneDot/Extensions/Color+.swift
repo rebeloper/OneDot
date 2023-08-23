@@ -36,3 +36,49 @@ public extension Color {
         )
     }
 }
+
+public extension Color {
+
+#if os(tvOS) || os(iOS) || os(watchOS)
+    
+    /// Transform a UIColor into a `rgb` Hex string
+    /// - Returns: The hex string.
+    var rgbAsHex: String {
+        return UIColor(self).rgbAsHex
+    }
+    
+    /// Transform a UIColor into a `rgba` Hex string
+    /// - Returns: The hex string.
+    var rgbaAsHex: String {
+        return UIColor(self).rgbaAsHex
+    }
+    
+    /// Transform a UIColor into a `argb` Hex string
+    /// - Returns: The hex string.
+    var argbAsHex: String {
+        return UIColor(self).argbAsHex
+    }
+    
+#elseif os(macOS)
+
+    /// Transform a UIColor into a `rgb` Hex string
+    /// - Returns: The hex string.
+    var rgbAsHex: String {
+        return NSColor(self).rgbAsHex
+    }
+    
+    /// Transform a UIColor into a `rgba` Hex string
+    /// - Returns: The hex string.
+    var rgbaAsHex: String {
+        return NSColor(self).rgbaAsHex
+    }
+    
+    /// Transform a UIColor into a `argb` Hex string
+    /// - Returns: The hex string.
+    var argbAsHex: String {
+        return NSColor(self).argbAsHex
+    }
+
+#endif
+
+}
